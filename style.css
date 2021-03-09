@@ -32,6 +32,25 @@ body {
 	overflow-x: hidden;
 }
 
+.el {
+	display: none;
+}
+a#MOVE_TOP_BTN {
+    position: fixed;
+    right: 2%;
+    bottom: 50px;
+    display: none;
+    z-index: 999;
+}
+
+
+.li {
+	display: none;
+}
+.ne {
+	display: none;
+}
+
 .books {
 	word-break: keep-all;
 	font-size: 1.5rem;
@@ -84,7 +103,7 @@ h3 {
 
 p, ul, ol {
 	margin-top: 0;
-	line-height: 180%;
+	line-height: 150%;
 }
 
 ul, ol {
@@ -253,9 +272,26 @@ a:hover {
 	width: 80vw;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+.badge {
+	background-color: bisque;
+	font-size: 1rem;
+	color: black;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 20px;
+	font-family: 'Nanum Gothic', sans-serif;
+	
+}
+
 .post {
 	margin-bottom: 15px;
 	border-bottom: 1px solid black;
+}
+
+.netiz {
+	/*background-color: bisque;*/
 }
 
 .post-alt
@@ -309,12 +345,12 @@ a:hover {
 
 .button
 {
-	padding: 10px 25px;
+	padding: 8px 15px;
 	background: #6F8651;
 	border-radius: 5px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	color: #FFFFFF;
 	-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;
 }

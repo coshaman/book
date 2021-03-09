@@ -13,15 +13,39 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="functions.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('#MOVE_TOP_BTN').fadeIn();
+            } else {
+                $('#MOVE_TOP_BTN').fadeOut();
+            }
+        });
+        
+        $("#MOVE_TOP_BTN").click(function() {
+            $('html, body').animate({
+                scrollTop : 0
+            }, 400);
+            return false;
+        });
+    });
+</script>
+
 </head>
 <body>
+<a id="MOVE_TOP_BTN" href="#">TOP</a>
 <div id="menu-wrapper">
 	<div id="menu" style="-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;">
 		<ul>
-			<li class="current_page_item"><a href="#">Top</a></li>
-			<li><a href="https://coshaman.github.io/portfolio/index.html">Portfolio</a></li>
+			<li class="current_page_item"><a href="#"><strong>Top</strong></a></li>
+			<li><a href="https://coshaman.github.io/portfolio/index.html" target="_blank">Portfolio</a></li>
 			<li><a href="blog.html">Blog</a></li>
-			<li><a href="https://forms.gle/xmf5UCyExF35YUZr7">Contact</a></li>
+			<li><a href="https://forms.gle/xmf5UCyExF35YUZr7" target="_blank">Contact</a></li>
 		</ul>
 	</div>
 	<!-- end #menu -->
@@ -39,10 +63,13 @@
 		<div id="page-bgtop">
 			<div id="page-bgbtm">
 				<div id="content">
-					<div class="header" style="text-align: left;-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;">
+					<div class="header" style="text-align: left;-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none; margin-bottom: 5vh;">
 						<nav>
 							<span style="font-size: 2rem;">
 							<a  onclick="allkk();" style="text-decoration: none;" class="whatbook">전체 보기</a>
+							</span>
+							<span style="font-size: 2rem;">
+							<a  onclick="netm();" style="text-decoration: none;" class="whatbook">네티즌 추천</a>
 							</span>
 							<span><a onclick="Koreanm();" style="text-decoration: none;" class="whatbook">한국 문학</a></span>
 							<span><a onclick="japanm();" style="text-decoration: none;" class="whatbook">일본 문학</a></span>
@@ -50,7 +77,7 @@
 							<span>
 							<a onclick="chum();" style="text-decoration: none;" class="whatbook">추리</a></span>
 							<span>
-							<a onclick="fam();" style="text-decoration: none;" class="whatbook">판타지</a></span>
+							<a onclick="fanm();" style="text-decoration: none;" class="whatbook">판타지</a></span>
 							<span>
 							<a onclick="com();" style="text-decoration: none;" class="whatbook">코믹</a></span>
 							<span><a onclick="rom();" style="text-decoration: none;" class="whatbook">로맨스</a></span>
@@ -76,343 +103,1743 @@
 					</div>
 					<div class="post nonko">
 						<h2 class="title"><a href="#">지극히 주관적인 독서 기록장</a></h2>
-						<p class="meta"><span class="date">2021-03-01</span><span class="posted">Posted by <a href="https://coshaman.github.io/portfolio/index.html">집돌이 페렐만</a></span></p>
+						<p class="meta"><span class="date">2021-03-01</span><span class="posted">Posted by <a href="https://coshaman.github.io/portfolio/index.html" target="_blank">집돌이 페렐만</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							<p>10년 간 수많은 책들을 읽으며 1~3주마다 독서 기록을 작성했습니다. 현재 많은 기록이 없어졌지만, 제 기억에 남아있는 책들과 아직 가지고 있는 독서 기록장을 바탕으로 개인적으로 책마다 느낀 점, 평점을 간단하게나마 적고자 합니다.</p>
 							<p>저는 학생이기 때문에 평가는 학생 관점에서 매우 주관적인 것이며, 저의 성향이나 가치관이 반영되어 있기 때문에 여러분의 생각과 다를 수 있습니다. 이에 대해서는 아래 버튼의 설문조사를 통해서 제게 의견을 보내주시면 수정하려고 합니다.</p>
-							<p class="links"><a href="https://forms.gle/xmf5UCyExF35YUZr7" class="button">수정 제안</a></p>
+							<p class="links"><a href="https://forms.gle/xmf5UCyExF35YUZr7" class="button" target="_blank">수정 제안</a></p>
 							<p>또한 한 달마다 아래 버튼으로 제출해주신 메일에 뉴스레터를 보내드리고 있습니다. 역시나 주관적이지만, 그렇기 때문에 가장 현실적인 책 추천을 받고 싶으시다면 뉴스레터를 신청해주세요.</p>
-							<p class="links"><a href="https://forms.gle/xmf5UCyExF35YUZr7" class="button">뉴스레터 구독</a></p><p>찾는 책이 있다면 컨트롤 + F로 찾아보세요.</p>
+							<p class="links"><a  target="_blank" href="https://forms.gle/xmf5UCyExF35YUZr7" class="button">뉴스레터 구독</a></p><p>찾는 책이 있다면 컨트롤 + F로 찾아보세요.</p>
 						</div>
 					</div>
-					<div class="post post-alt nonko ot">
-						<h2 class="title"><a>이기적 유전자</a></h2>
-						<p class="meta"><span class="date">평점 : 9.0</span><span class="posted">Written by <a href="">리처드 도킨스</a></span></p>
+					<div class="post post-alt ne">
+						<h2 class="title"><a>철인왕후 대본집</a><span class="badge">네티즌 '혠'님의 추천!</span></h2>
+						<p class="meta"><span class="date">평점 : 10</span><span class="posted">Written by <a>최아일</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							주인공은 절대 죽지 않는다는걸 대놓고 보여준 작품. 주인공의 시대적응에도 초점을 둠.
 								
-							</p></span>`; this.className ="";' class="button">Read More</a></p>
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					
-					<div class="post post-alt nonko ot">
-						<h2 class="title"><a>만들어진 신</a></h2>
-						<p class="meta"><span class="date">평점 : 9.0</span><span class="posted">Written by <a href="">리처드 도킨스</a></span></p>
+					<div class="post post-alt ne">
+						<h2 class="title"><a>엔트로피</a><span class="badge">네티즌 '깁'님의 추천!</span></h2>
+						<p class="meta"><span class="date">평점 : 10</span><span class="posted">Written by <a>제러미 리프킨</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							 세상을 다른 관점으로 보는 방법을 배웠다. 
 								
-							</p></span>`; this.className ="";' class="button">Read More</a></p>
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ne">
+						<h2 class="title"><a>시크릿</a><span class="badge">네티즌 '뀨 queue'님의 추천!</span></h2>
+						<p class="meta"><span class="date">평점 : 9.5</span><span class="posted">Written by <a>론다 번</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							 이 책에서 이야기하는 "비밀"을 알고 나서 믿음의 힘이 얼마나 강한지 알 수 있었고 내 삶을 크게 변화시킨 것 같아서 좋았다
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ne">
+						<h2 class="title"><a>총균쇠</a><span class="badge">네티즌 'ㅇㅅㅇ'님의 추천!</span></h2>
+						<p class="meta"><span class="date">평점 : 9</span><span class="posted">Written by <a>최아일</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							인종차별의 실제의 이유를 알 수 있는 좋은 책
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					<div class="post post-alt nonko ot">
+					<div class="post post-alt ne">
+						<h2 class="title"><a>스노볼</a><span class="badge">네티즌 'junse'님의 추천!</span></h2>
+						<p class="meta"><span class="date">평점 : 9</span><span class="posted">Written by <a>(알 수 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							 정말 세밀하게 짜여져 있는 판타지 이다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+						
+															
+					<div class="post post-alt nonko ot god sp fre isu mar">
 						<h2 class="title"><a>차라투스트라는 이렇게 말했다</a></h2>
-						<p class="meta"><span class="date">평점 : 9.0</span><span class="posted">Written by <a href="">니체</a></span></p>
+						<p class="meta"><span class="date">평점 : 9.0</span><span class="posted">Written by <a>니체</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							인간이라면 살면서 반드시 읽어봐야 하는 책. 철학적이고도 매력적인 니체의 주장이 살아 움직인다.
 								
-							</p></span>`; this.className ="";' class="button">Read More</a></p>
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt nonko ot ma">
+						<h2 class="title"><a>이기적 유전자</a></h2>
+						<p class="meta"><span class="date">평점 : 9.0</span><span class="posted">Written by <a>리처드 도킨스</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							우리, 뿐만 아니라 모든 종에 대해 새로운 시각을 주는 책.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					<div class="post post-alt ko">
+					
+					<div class="post post-alt nonko ot god ma">
+						<h2 class="title"><a>만들어진 신</a></h2>
+						<p class="meta"><span class="date">평점 : 9.0</span><span class="posted">Written by <a>리처드 도킨스</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							종교에 대해 가장 과학적이고 논리적인 분석.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					
+					<div class="post post-alt ko god isu chu">
 						<h2 class="title"><a>사람의 아들</a></h2>
-						<p class="meta"><span class="date">평점 : 9.0</span><span class="posted">Written by <a href="">이문열</a></span></p>
+						<p class="meta"><span class="date">평점 : 9.0</span><span class="posted">Written by <a>이문열</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							종교에 대해 "만들어진 신"과는 다른 위치에서 발견한 완벽하고 훌륭한 생각
 								
-							</p></span>`; this.className ="";' class="button">Read More</a></p>
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					<div class="post post-alt nonko ot">
+					<div class="post post-alt nonko ot isu mar">
 						<h2 class="title"><a>죄와 벌</a></h2>
-						<p class="meta"><span class="date">평점 : 9.0</span><span class="posted">Written by <a href="">도스토예프스키</a></span></p>
+						<p class="meta"><span class="date">평점 : 9.0</span><span class="posted">Written by <a>도스토예프스키</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							초인에 대해, 가장 잘 정의된, 가장 의문을 품게 만드는, 가장 인상깊은 책
 								
-							</p></span>`; this.className ="";' class="button">Read More</a></p>
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					<div class="post post-alt nonko ot">
+					<div class="post post-alt nonko ot fre">
 						<h2 class="title"><a>데미안</a></h2>
-						<p class="meta"><span class="date">평점 : 8.7</span><span class="posted">Written by <a href="">헤르만 헤세</a></span></p>
+						<p class="meta"><span class="date">평점 : 8.7</span><span class="posted">Written by <a>헤르만 헤세</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							데미안은 우리 내면에 있는 이성이자, 지혜이다. 그리고 우리는 모두 위버멘쉬가 될 수 있다.
 								
-							</p></span>`; this.className ="";' class="button">Read More</a></p>
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					<div class="post post-alt nonko ot">
+					<div class="post post-alt nonko ot chu fan mar fre isu">
 						<h2 class="title"><a>1984</a></h2>
-						<p class="meta"><span class="date">평점 : 8.7</span><span class="posted">Written by <a href="">조지 오웰</a></span></p>
+						<p class="meta"><span class="date">평점 : 8.7</span><span class="posted">Written by <a>조지 오웰</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							빅브라더는 어떤 형태로는 남아있기 마련이다.
 								
-							</p></span>`; this.className ="";' class="button">Read More</a></p>
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					<div class="post post-alt ot">
+					<div class="post post-alt ot mar fre">
 						<h2 class="title"><a>그리스인 조르바</a></h2>
-						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a href="">니코스 카잔차키스</a></span></p>
+						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a>니코스 카잔차키스</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							이것이 위버멘쉬다. 니체가 내린 정의를 가장 잘 나타낸 책.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					<div class="post post-alt ot">
+					<div class="post post-alt ot mar fre isu">
 						<h2 class="title"><a>동물농장</a></h2>
-						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a href="">조지 오웰</a></span></p>
+						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a>조지 오웰</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							체제와 권력에 대해 가장 잘 설명한 책
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					<div class="post post-alt ot">
+					<div class="post post-alt ot god fan">
 						<h2 class="title"><a>파우스트</a></h2>
-						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a href="">괴테</a></span></p>
+						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a>괴테</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							괴테는 믿고 읽는다. 결말이 아쉽지만, 종교에 대해 그 당시로서도, 지금으로서도 혁신적인 괴테의 생각이 담긴 책.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					<div class="post post-alt ot">
+					<div class="post post-alt ot fan com ma sp">
 						<h2 class="title"><a>은하수를 여행하는 히치하이커를 위한 안내서</a></h2>
-						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a href="">더글러스 애덤스</a></span></p>
+						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a>더글러스 애덤스</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							미친! 근데 우주는 진짜 이렇게 돌아갈 것 같다.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					
-					<div class="post post-alt ja">
+					<div class="post post-alt ja fan rom mar sp god">
 						<h2 class="title"><a>1Q84</a></h2>
-						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a href="">무라카미 하루키</a></span></p>
+						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a>무라카미 하루키</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							거장이 또다른 거장의 소설로 팬픽 쓰면 이렇게 됨. 
+							1984라는 명작의 대를 잇는다고 봐도 되는, 현대적이고 환상적인, 엄청난 소설.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ot fan isu">
+						<h2 class="title"><a>개미</a></h2>
+						<p class="meta"><span class="date">평점 : 8.6</span><span class="posted">Written by <a>베르나르 베르베르</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								여기서 개미는 1권 개미, 개미의 날, 개미 혁명을 모두 포함한다.
+							</p><p>
+								개미들의 서사와 인간들의 서사가 엮여 초월적 존재와 자연에 대한 고찰을 담았다.
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot isu fre">
+						<h2 class="title"><a>호밀밭의 파수꾼</a></h2>
+						<p class="meta"><span class="date">평점 : 8.55</span><span class="posted">Written by <a>제롬 데이비드 샐린저</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							십대의 불안한 시선으로 더욱 불안한 세상을 순수하고도 역동적으로 담아냈다.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ko">
+						<h2 class="title"><a>그 많던 싱아는 누가 다 먹었을까</a></h2>
+						<p class="meta"><span class="date">평점 : 8.51</span><span class="posted">Written by <a>박완서</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							박완서 소설의 근원인 꾸밈없이 순수하고도 흥미로운 그녀의 인생으로. 참고로 박완서 선생님이 여자인걸 이 책 보고 알았다.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ne">
+						<h2 class="title"><a>위험한 과학책</a><span class="badge">네티즌 'junse'님의 추천!</span></h2>
+						<p class="meta"><span class="date">평점 : 8.5</span><span class="posted">Written by <a>랜들먼로</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							 
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ot fan god sp">
+						<h2 class="title"><a>신</a></h2>
+						<p class="meta"><span class="date">평점 : 8.4</span><span class="posted">Written by <a>베르나르 베르베르</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							재미와 흥미진진함, 그리고 베르나르 특유의 스토리 전개와 몽환적이고도 현실적인 분위기가 잘 드러나는 책. 그리고 결말까지 잘 마쳤다.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ot fre">
+						<h2 class="title"><a>노인과 바다</a></h2>
+						<p class="meta"><span class="date">평점 : 8.4</span><span class="posted">Written by <a>어니스트 헤밍웨이</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							잔잔하지만 인간의 인생을, 그 너머에 있는 자연의 많은 것을 담아낸 책.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ko isu mar">
+						<h2 class="title"><a>난장이가 쏘아올린 작은 공</a></h2>
+						<p class="meta"><span class="date">평점 : 8.2</span><span class="posted">Written by <a>조세희</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							부에 따른 새로운 계급사회, 가장 현실적이고 현장감있는 이야기.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ot his">
+						<h2 class="title"><a>삼국지</a></h2>
+						<p class="meta"><span class="date">평점 : 8.2</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							*스포일러 승리 : 조조</p><p>
+							찐승리 : 사마의</p><p>
+							최종 승리 : 유비</p><p>
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ko his sho isu">
+						<h2 class="title"><a>원미동 사람들</a></h2>
+						<p class="meta"><span class="date">평점 : 8.2</span><span class="posted">Written by <a>양귀자</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							작은 동네 안에서 그 때의 사회상을 들여다본다.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ot isu">
+						<h2 class="title"><a>앵무새 죽이기</a></h2>
+						<p class="meta"><span class="date">평점 : 8.2</span><span class="posted">Written by <a>하퍼 리</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							인권은 82년생 김지영처럼 욱여넣는다고 되는게 아니다. 이게 바로 제대로 된 인권 운동
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ot fan">
+						<h2 class="title"><a>기억 전달자</a></h2>
+						<p class="meta"><span class="date">평점 : 8.2</span><span class="posted">Written by <a>로이스 로리</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+								<del>작가 이름이 심히 마음에 든다는 점과 함께</del> 섬세하고도 훌륭한, 긴장감 넘치고 환상적인 이야기와 설정이 인상깊은 책.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ot rom">
+						<h2 class="title"><a>잘못은 우리별에 있어</a></h2>
+						<p class="meta"><span class="date">평점 : 8.2</span><span class="posted">Written by <a>존 그린</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
-							</p><p>
+							지구가 별이 아니라는 점을 제외하면 훌륭한 책
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
-					<div class="post post-alt">
-						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+					<div class="post post-alt ja fan sp">
+						<h2 class="title"><a>나미야 잡화점의 기적</a></h2>
+						<p class="meta"><span class="date">평점 : 8.2</span><span class="posted">Written by <a>히가시노 게이고</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							
 							<p><a onclick='this.innerHTML = `<span class="books"><p>
 								
+							완벽한 복선과 주제. 모든 인물들 한 명 한 명의 이야기가 모여 그 추리소설 작가 히가시노 게이고라고는 믿을 수 없을 정도의 감동과 따뜻함이 완벽하다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt sp ot fan">
+						<h2 class="title"><a>모모</a></h2>
+						<p class="meta"><span class="date">평점 : 8.1</span><span class="posted">Written by <a>미하엘 엔데</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							시간에 대해 가장 흥미롭고 환상적인 소설
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ne">
+						<h2 class="title"><a>무진기행</a><span class="badge">네티즌 '산업화'님의 추천!</span></h2>
+						<p class="meta"><span class="date">평점 : 6</span><span class="posted">Written by <a>김승옥</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							 재밋다
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					
+					<div class="post post-alt ne">
+						<h2 class="title"><a>포노 사피엔스</a><span class="badge">네티즌 'junse'님의 추천!</span></h2>
+						<p class="meta"><span class="date">평점 : 8</span><span class="posted">Written by <a>(알 수 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							 4차 산업 혁명에 대해 전반적 지식과 스마트폰, 컴퓨터, 그리고 인터넷 등의 어두운 미래만을 강조하는 우리 사회와는 달리,  이것들의 밝은 미래를 보여주는 책이다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko don mar">
+						<h2 class="title"><a>우리들의 일그러진 영웅</a></h2>
+						<p class="meta"><span class="date">평점 : 8</span><span class="posted">Written by <a>이문열</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							지금도 우리들의 일그러진 영웅은 존재한다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot mar">
+						<h2 class="title"><a>파리대왕</a></h2>
+						<p class="meta"><span class="date">평점 : 8</span><span class="posted">Written by <a>윌리엄 골딩</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							파리대왕은 제목일 뿐, 내용은 하드코어한 15소년 표류기.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fre isu his">
+						<h2 class="title"><a>이반 데니소비치의 하루(수용소 군도)</a></h2>
+						<p class="meta"><span class="date">평점 : 8</span><span class="posted">Written by <a>알렉산드르 솔제니친</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							수용소 가보기 전에는 함부로 평가할 수 없는 책. 군대 다녀오면 다시 읽겠다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko sp isu">
+						<h2 class="title"><a>시간을 파는 상점</a></h2>
+						<p class="meta"><span class="date">평점 : 8</span><span class="posted">Written by <a>김선영</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							내가 그동안 읽은 그 어떤 책보다도 단어 선정과 인물 관계, 사건의 묘사에 충실한 책. 청소년 소설로는 보기 드문 열린 결말로 여운을 준 책. 8점에 그친 이유는 속편 때문.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ja rom">
+						<h2 class="title"><a>너의 췌장을 먹고 싶어(너췌먹)</a></h2>
+						<p class="meta"><span class="date">평점 : 8</span><span class="posted">Written by <a>스미노 요루</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							제대로 읽었다면 울지 않을 수 없는 책. 복선도, 주제도, 표현도 완벽하다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko sho isu">
+						<h2 class="title"><a>사제와 제물</a></h2>
+						<p class="meta"><span class="date">평점 : 8</span><span class="posted">Written by <a>현길언</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							십년이 지나고 백년이 지나도 이 책은 읽어야 한다. 사회 전반의 갈등, 투쟁에 관한 숨은 명작
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko">
+						<h2 class="title"><a>날개</a></h2>
+						<p class="meta"><span class="date">평점 : 8</span><span class="posted">Written by <a>이상</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							박제가 되어버린 천재를 아오?
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko poem">
+						<h2 class="title"><a>조감도</a></h2>
+						<p class="meta"><span class="date">평점 : 8</span><span class="posted">Written by <a>이상</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							이상이 이상적이지만 이상한 시를 썼다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko sho">
+						<h2 class="title"><a>비행운</a></h2>
+						<p class="meta"><span class="date">평점 : 7.9</span><span class="posted">Written by <a>김애란</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							하나도 지나칠 수 없는 단편. 여운을 남기는 표현. 그리고 모든 일상에 남겨진 긴장감.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot don fan">
+						<h2 class="title"><a>찰리와 초콜릿 공장</a></h2>
+						<p class="meta"><span class="date">평점 : 7.8</span><span class="posted">Written by <a>로알드 달</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							로알드 달 특유의 상상력과 재치가 드러나는 소설. 그렇지만 로알드달의 뜻과는 달리 교훈적이고 체벌성 내용이라 아쉽다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot don">
+						<h2 class="title"><a>내 이름은 삐삐 롱스타킹</a></h2>
+						<p class="meta"><span class="date">평점 : 7.8</span><span class="posted">Written by <a>이스트리드 린드그렌</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								틀에 박힌 동화는 이제 그만
 							</p><p>
+								큼 신나시는 거지~ 무야호!
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot rom">
+						<h2 class="title"><a>위대한 개츠비</a></h2>
+						<p class="meta"><span class="date">평점 : 7.8</span><span class="posted">Written by <a>F. 스콧 피츠제럴드</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							사랑과 집착이 얼마나 무서운지, 폭풍의 언덕보다 부드럽고 흥미로우면서도 강렬하게 보여준다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt god ot">
+						<h2 class="title"><a>신곡</a></h2>
+						<p class="meta"><span class="date">평점 : 7.8</span><span class="posted">Written by <a>단테</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							종교와 관계없이 읽어볼 필요가 있다. 인간이 이렇게 진화한 것은 이렇게 존재하지 않는 것을 섬세하게 상상해냈기 때문이다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot rom isu">
+						<h2 class="title"><a>안나 카레리나</a></h2>
+						<p class="meta"><span class="date">평점 : 7.7</span><span class="posted">Written by <a>톨스토이</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							첫문장만 읽어도 이 책이 명작인 걸 알 수 있다. 아니, 첫문장이 이 책 전체를 말해준다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt el ko don sp isu">
+						<h2 class="title"><a>시간 가계</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>이나영</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							초등학생 동화라고 보지 못할정도로 섬세한 구성과 주제, 그리고 스토리를 푸는 방식과 결말이 훌륭하다. 상대적으로 보면 9점, 다른 고전과 비교하면 6점
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ja">
+						<h2 class="title"><a>오체불만족</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>오토타케 히로타다</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							이 책 읽으면 장애인도 절대 무시 못할것이다. 작가는 이후 불륜에까지 성공한 능력자다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ja chu fan com">
+						<h2 class="title"><a>앨리스 죽이기</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>고바야시 야스미</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							이상한 나라의 엘리스보다 더 정신나갔다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ja chu ma">
+						<h2 class="title"><a>용의자 x의 헌신</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>히가시노 게이고</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							히가시노 게이고 특유의 탄탄한 스토리와 주제의식, 그리고 아무도 예상못했지만 충분히 힌트를 준 결말이 완벽하다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot rom art">
+						<h2 class="title"><a>셰익스피어 4대 비극</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>셰익스피어</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							Doth mother knows you re wearing her dress?
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ja rom ma">
+						<h2 class="title"><a>박사가 사랑한 수식</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>오가와 요코</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							어떤 놈이 이과는 연애 못한다고 함?
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko ma">
+						<h2 class="title"><a>과학 콘서트</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>정재승</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							정재승의 독창적이고 신선한 생각과 주제, 그리고 그 탐구가 잘 드러난다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan sho">
+						<h2 class="title"><a>나무</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>베르나르 베르베르</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							이거 읽고 베르나르 책 다시 읽어보면 재탕이 무엇인지 알 수 있다.
+							그 외에는 굉장히 신선함.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan">
+						<h2 class="title"><a>오즈의 마법사</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>프랭크 라이언 밤</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							환상의 나라 오즈로~ 반짝반짝 오즈에 오신 것을 환영합니다!
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko ma art">
+						<h2 class="title"><a>명화속 수학 이야기/명화 속 과학 이야기</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							내용이 대체로 흥미롭고, 다양한 명화들을 만날 수도 있다. 시간이 있다면 읽어볼만한 책
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko ma">
+						<h2 class="title"><a>진짜 궁금했던 원소질문 30</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>과학동아</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							흥미로운 주제를 잘 골라서 소개했다. 원소아파트만큼이나 원소에 관심있다면 읽을만한 책.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fa">
+						<h2 class="title"><a>올리버 트위스트</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>찰스 디킨스</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							이것도 솔직히 청소년 드라마물로 만드는 거 ㅆㄱㄴ. 그만큼 현실감있고 흥미진진하게 그 당시의 사회상과 이야기를 풀어낸다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot">
+						<h2 class="title"><a>꾸뻬씨의 행복여행</a></h2>
+						<p class="meta"><span class="date">평점 : 7.5</span><span class="posted">Written by <a>프랑수아 를로르</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							당신에게 행복이 뭔지 알려주는 책이 아니라, 그 해답으로 가는 길에 대한 가이드북.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko his fa don">
+						<h2 class="title"><a>몽실언니</a></h2>
+						<p class="meta"><span class="date">평점 : 7.4</span><span class="posted">Written by <a>권정생</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							이 책이 다른 역사 소설보다 더 감명깊은 이유는, 불과 백년도 안되는 시간 전에 일어났을지도 모르는 일이기 때문
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ne">
+						<h2 class="title"><a>주석과 함께 읽는 이상한 나라의 앨리스</a><span class="badge">네티즌 'koder'님의 추천!</span></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">원작 <a>루이스 캐럴</a> 번역 <a>정병선</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							 앨리스에 대한 역사적 분석과 새로운 해석
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko sho">
+						<h2 class="title"><a>화수분</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>전영택</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							열린 배드 엔딩
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko isu sho">
+						<h2 class="title"><a>술 권하는 사회</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>현진건</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							당시로서는 안타까운 현실상이, 지금 보면 한탄 뿐인 현진건 스타일
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan">
+						<h2 class="title"><a>천사들의 제국</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>베르나르 베르베르</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							더 보기 정보가 없습니다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt rom don ko">
+						<h2 class="title"><a>소나기</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>황순원</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							로맨스 3대 요소 : 순수 + 츤데레 + 비극 -> 소나기
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko don rom">
+						<h2 class="title"><a>동백꽃</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>김유정</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							요즘 초딩들도 이러나
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko don rom">
+						<h2 class="title"><a>봄봄</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>김유정</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							더 보기 정보가 없습니다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko don">
+						<h2 class="title"><a>자전거 도둑</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>박완서</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							더 보기 정보가 없습니다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan isu">
+						<h2 class="title"><a>로빈 후드</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>알렉상드로 뒤마</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							겁나게 멋지지만, 과연 로빈 후드가 정의인지는 당신의 판단이다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan isu ">
+						<h2 class="title"><a>모비 딕</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>허먼 멜빌</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							자연과 인간, 중요함이 변하지 않는 주제
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan isu">
+						<h2 class="title"><a>걸리버 여행기</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>조나단 스위프트</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							완벽하다. 표현도 설정도 이야기도. 다만 이야기를 다 쓰지 못했다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot rom">
+						<h2 class="title"><a>전쟁과 평화</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>톨스토이</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							더 보기 정보가 없습니다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot don el com">
+						<h2 class="title"><a>윔피키드</a></h2>
+						<p class="meta"><span class="date">평점 : 7</span><span class="posted">Written by <a>제프 키니</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							이게 재미가 없다면 당신은 스스로를 찐따라 칭할 수 없다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan">
+						<h2 class="title"><a>몽테크리스토 백작</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>알렉상드르 뒤마</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							아침 드라마는 모두 여기서 시작한다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot his rom">
+						<h2 class="title"><a>바람과 함께 사라지다</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>마거릿 미첼</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							영화를 읽기 전에 책을 읽으라.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot chu isu fa">
+						<h2 class="title"><a>카라마조프가의 형제들</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>도스토예프스키</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							도스토예프스키는 역시 믿고 본다. 선량한 주인공의 시선으로 추악한 인간들의 모습이 드러난다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot don">
+						<h2 class="title"><a>톰소여의 모험</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>마크 트웨인</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							요즘 애들보다 더 신나게 노는 듯 ㅋ
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot com don">
+						<h2 class="title"><a>허클베리 핀의 모험</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>마크 트웨인</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							흑인 인권 뿐만 아니라 그 당시의 문제 있는 사회를 생생하고도 재미나게 볼 수 있다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko chu ">
+						<h2 class="title"><a>살인자의 기억법</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>김영하</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							김영하 입덕 계기 소설. 탄탄한 스토리와 결말이 훌륭하다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot">
+						<h2 class="title"><a>부활</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>톨스토이</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							꽤 신선한 구조였지만, 뇌리에 깊게 박히지 못했다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot poem his">
+						<h2 class="title"><a>안네의 일기</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>안네 프랑크</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							역사는 반복된다. 우리는 그 반복을 막기 위해 이 책을 읽는다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan his">
+						<h2 class="title"><a>토머스 불핀치의 아서왕과 원탁의 기사</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>토머스 불핀치 엮음</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							다양한 버전을 읽어보지 않아서 비교는 못하지만, 토머스 불핀치 버전은 꽤 나쁘지 않았다. 아서왕 전설이 주는 가치와는 무관하게, 아서왕과 원탁의 기사 전설은 삼국지, 길가메시 서사시 등과 같이 반드시 읽어봐야 한다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fa">
+						<h2 class="title"><a>위대한 유산</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>찰스 디킨스</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							이 책에서 말한 위대한 유산은 과연 현대에도 적용될까.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan">
+						<h2 class="title"><a>지킬 박사와 하이드</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>레슬리 브리쿠스</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							누구나 지킬과 하이드를 가지고 있을 것이다. 지킬의 파멸은 당신과 먼 이야기가 아니다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot sho rom">
+						<h2 class="title"><a>별</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>알퐁스 도데</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							순수한 사랑 이야기, 그리고 계급 간의 평등에 대한 약간의 고찰
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan ma">
+						<h2 class="title"><a>해저 2만리</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>쥘 베른</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							SF에서 끝나지 않고 독자에게 생각해볼 주제를 던지기도 한다.
+							
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot sho">
+						<h2 class="title"><a>포우 단편선</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>에드거 앨런 포</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							이것이 바로 스릴러의 고향. 사람에 따라 여름에 읽으면 공포영화 보는 효과가 나올 수도 있다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot">
+						<h2 class="title"><a>변신</a></h2>
+						<p class="meta"><span class="date">평점 : 6.8</span><span class="posted">Written by <a>프란츠 카프카</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							당신이라면 어떻게 하겠는가? 당신이 사랑하는 사람은 그 자체로서의 의미인가? 책은 이러한 의문을 당신에게 던진다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot don">
+						<h2 class="title"><a>꼬마 백만장자 삐삐</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>아스트리드 린드그렌</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							더 보기 정보가 없습니다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot don">
+						<h2 class="title"><a>삐삐는 어른이 되기 싫어</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>아스트리드 린드그렌</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							더 보기 정보가 없습니다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot don fan com">
+						<h2 class="title"><a>찰리와 거대한 유리 엘리베이터</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>로알드 달</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							전작에 비해서는 아쉽지만, 여전히 재미나다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan">
+						<h2 class="title"><a>돈키호테</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>미겔 데 세르반테스</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							개인적으로 팁을 주자면 원작의 삽화를 찾아서 같이 보는 것을 추천한다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt el ko">
+						<h2 class="title"><a>구멍 속 나라</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							더 보기 서평이 없습니다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko isu don">
+						<h2 class="title"><a>시간을 파는 상점 2 : 너를 위한 시간</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							여러모로 1권의 분위기는 살렸지만, 제대로 잇지는 못했다. 단어 선택, 전개, 인물관계에 있어 전작보다 부족해졌으나 더 웅장한 주제와 사건을 다룬 점은 마음에 든다. 떡밥은 많이 풀고 회수는 적게한 책.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko rom sho">
+						<h2 class="title"><a>가방에 담아요, 마음</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							스토리와 인물상이 섬세하게 와닿는 "연애소설"
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko don">
+						<h2 class="title"><a>달걀은 달걀로 갚으렴</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							교과서에서 다들 접해보셨겠지만, 우리의 가치관에 긍정적 영향을 주는 책이다. 무엇보다 국어 교과서가 옆에 있다면 "바람직한 의사소통 방법"에 대해 배울 수 있을 것이다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot">
+						<h2 class="title"><a>청소부 밥</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							인생의 교훈을 주는 책. 감동적이기까지 하지만 극소수의 사람이 아니라면 별로 도움이 안될 것 같다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko el his">
+						<h2 class="title"><a>첩자가 된 아이</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							고려 시대 삼별초의 항쟁이 감동적이고도 생생하게 다가온다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko fan el">
+						<h2 class="title"><a>열세번째 아이</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							미래세계에 대해 아이들이 처음으로 생각해볼 기회를 주는 책.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko his el">
+						<h2 class="title"><a>서찰을 전하는 아이</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							역사를 따라가는 현장감과 서민들의 모습이 인상깊다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko chu fa">
+						<h2 class="title"><a>아버지의 오토바이</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							아버지의 사랑이 잘 느껴지는 좋은 작품
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ja chu fan com">
+						<h2 class="title"><a>도로시 죽이기</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>고바야시 야스미</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							실제 내용을 반영한 점도 인상깊지만 여전히 정신 나간게 제일 놀랍다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ja chu fan com">
+						<h2 class="title"><a>클라라 죽이기</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>고바야시 야스미</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							결말이 신선하고 여전히 정신나갔다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot his rom fre">
+						<h2 class="title"><a>두 도시 이야기</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							그렇게 여운이나 교훈이 많은 책은 아니지만, 현장감에 높은 점수를 준다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko chu fan mar fre isu">
+						<h2 class="title"><a>빛의 제국</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>김영하</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							재미와 여운을 모두 주지만, 살짝 부족한 느낌. 그래도 읽어보기를 추천한다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko poem">
+						<h2 class="title"><a>보노보노처럼 살다니 다행이야</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							따뜻하고 재미나다. 중간중간 보노보노 만화도 좋다. 근데 삶에 자신감이 있다면 크게 도움이 되는 책은 아니다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot chu fan">
+						<h2 class="title"><a>고양이/죽음/기억</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>베르나르 베르베르</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							재밌지만 베르나르가 슬슬 아이디어가 떨어지는 게 확실하다. 이렇게 한 묶음으로 묶었는데도 문제가 없는 걸 보면...
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot don fa">
+						<h2 class="title"><a>마틸다</a></h2>
+						<p class="meta"><span class="date">평점 : 6.7</span><span class="posted">Written by <a>로알드 달</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							유쾌하고 재미난 로알드 달 스타일!
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot his">
+						<h2 class="title"><a>교양있는 우리아이를 위한 세계 역사 이야기 1권 고대편</a></h2>
+						<p class="meta"><span class="date">평점 : 6.6</span><span class="posted">Written by <a>수잔와이즈 바우어</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							내용이나 구성이 나쁘지 않은 편이지만, 특출나게 재미나거나 정보가 정확한 편이 아니라 다른 책을 더 추천한다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot rom">
+						<h2 class="title"><a>오만과 편견</a></h2>
+						<p class="meta"><span class="date">평점 : 6.6</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							정말 오만과 편견 얘기다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot don el">
+						<h2 class="title"><a>꽃들에게 희망을</a></h2>
+						<p class="meta"><span class="date">평점 : 6.6</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							동화로서는 생각을 많이 하게 한다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fa">
+						<h2 class="title"><a>작은 아씨들</a></h2>
+						<p class="meta"><span class="date">평점 : 6.6</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							어려운 상황에도 꿋꿋이 자신의 길을 나아가는 소녀들의 이야기
+							</p><p>유머와 밝은 정서로 가족의 따뜻함이 잘 나타난다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fa don">
+						<h2 class="title"><a>우산타고 날아온 메리 포핀스</a></h2>
+						<p class="meta"><span class="date">평점 : 6.6</span><span class="posted">Written by <a>파멜라 린든 트래버스</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							교훈적인 면을 빼면 독창적이고 신선한 동화이다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fa don">
+						<h2 class="title"><a>나의 라임 오렌지 나무</a></h2>
+						<p class="meta"><span class="date">평점 : 6.5</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							꽤 감동적이고 재밌는 책이다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fa">
+						<h2 class="title"><a>돼지가 한 마리도 죽지 않던 날</a></h2>
+						<p class="meta"><span class="date">평점 : 6.5</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							잔잔하고 아름답지만, 너무 잔잔하고 아름답다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko fa">
+						<h2 class="title"><a>수난이대</a></h2>
+						<p class="meta"><span class="date">평점 : 6.5</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							부자를 통해 전쟁의 아픔을 굉장히 잘 드러냈다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko rom isu">
+						<h2 class="title"><a>까칠한 재석이 시리즈</a></h2>
+						<p class="meta"><span class="date">평점 : 6.3</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							한국 청소년 문학으로서는 꽤 획기적이고 좋은 책. 이걸로 아침드라마 찍으면 잘팔릴 것 같다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot chu fan sp his">
+						<h2 class="title"><a>비밀의 터널 시리즈</a></h2>
+						<p class="meta"><span class="date">평점 : 6.2</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							판타지, 시간여행, 추리를 잘 섞어서 재미는 있다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fan don">
+						<h2 class="title"><a>비밀의 화원</a></h2>
+						<p class="meta"><span class="date">평점 : 6.2</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							동화적 판타지를 잘 표현했으나 교훈적인 면이 큰 편이다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot fre mar">
+						<h2 class="title"><a>15소년 표류기</a></h2>
+						<p class="meta"><span class="date">평점 : 6.1</span><span class="posted">Written by <a>쥘 베른</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							우정판 로빈슨 크루소. 재미와 주제를 모두 담긴 했으나 얕은 면이 있다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt rom ot">
+						<h2 class="title"><a>제인에어</a></h2>
+						<p class="meta"><span class="date">평점 : 6.1</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							당시로서는 굉장히 획기적이지만 틀에 박힌 요소가 없지 않다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot rom">
+						<h2 class="title"><a>젊은 베르테르의 슬픔</a></h2>
+						<p class="meta"><span class="date">평점 : 6.1</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							젊은이의 사랑을 열정적이고 비극적으로 잘 담아낸 책이다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot rom">
+						<h2 class="title"><a>키다리 아저씨</a></h2>
+						<p class="meta"><span class="date">평점 : 6.1</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							읽을만 하다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ne">
+						<h2 class="title"><a>블랙 쇼맨과 이름없는 마을의 살인</a><span class="badge">네티즌 '냠얌굿'님의 추천!</span></h2>
+						<p class="meta"><span class="date">평점 : 6</span><span class="posted">Written by <a>(알 수 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							 날카로운 분석력과 상상력으로 이야기를 끌어나가는 전개가 참 좋았다 좀 길긴 하지만 그만큼 볼 가치가 있는 추리소설이다
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko isu fa">
+						<h2 class="title"><a>페인트</a></h2>
+						<p class="meta"><span class="date">평점 : 6</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							어느 정도 한국 청소년 문학의 문제를 탈피하려 했으나, 너무 짧아서 이도 저도 못하게 되어버려 안타깝다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ot mar sp">
+						<h2 class="title"><a>갈메기의 꿈</a></h2>
+						<p class="meta"><span class="date">평점 : 6</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							초월과 지식인에 대해 깊은 고찰을 담았다. 그리고 표지에 갈메기가 몇 마리인지 궁금하다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko isu fa">
+						<h2 class="title"><a>82년생 김지영</a></h2>
+						<p class="meta"><span class="date">평점 : 6</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							관찰력에 박수를 주고 싶으나, 안과에 가보기를 권장한다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko rom fa isu">
+						<h2 class="title"><a>완득이</a></h2>
+						<p class="meta"><span class="date">평점 : 6</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							주제와 교훈에 매달리느라 애매한 교육 소설이 되어 버렸다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko fa">
+						<h2 class="title"><a>아몬드</a></h2>
+						<p class="meta"><span class="date">평점 : 6</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							설정은 훌륭했으나 지나치게 넣은 설정을 소화하지 못했다.
+								
+							</p></span>`; this.className ="";' class="button">더 보기</a></p>
+						</div>
+					</div>
+					<div class="post post-alt ko com fa">
+						<h2 class="title"><a>합체</a></h2>
+						<p class="meta"><span class="date">평점 : 6</span><span class="posted">Written by <a>(정보 없음)</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							
+							<p><a onclick='this.innerHTML = `<span class="books"><p>
+								
+							재미도 공감도 챙겼지만 문학적으로 훌륭하다고는 못하겠다.
 								
 							</p></span>`; this.className ="";' class="button">더 보기</a></p>
 						</div>
 					</div>
 					<!--<div class="post post-alt">
 						<h2 class="title"><a>제목</a></h2>
-						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a href="">(정보 없음)</a></span></p>
+						<p class="meta"><span class="date">평점 : </span><span class="posted">Written by <a>(정보 없음)</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							

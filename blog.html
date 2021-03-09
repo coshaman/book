@@ -23,15 +23,37 @@ Released   : 20130409
 <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed|Open+Sans:400,300,700|Yesteryear" rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('#MOVE_TOP_BTN').fadeIn();
+            } else {
+                $('#MOVE_TOP_BTN').fadeOut();
+            }
+        });
+        
+        $("#MOVE_TOP_BTN").click(function() {
+            $('html, body').animate({
+                scrollTop : 0
+            }, 400);
+            return false;
+        });
+    });
+</script>
 </head>
 <body>
 <div id="menu-wrapper">
 	<div id="menu" style="-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;">
 		<ul>
 			<li class="current_page_item"><a href="index.html">Top</a></li>
-			<li><a href="https://coshaman.github.io/portfolio/index.html">Portfolio</a></li>
-			<li><a href="https://coshaman.github.io/portfolio/blog.html">Blog</a></li>
-			<li><a href="https://forms.gle/xmf5UCyExF35YUZr7">Contact</a></li>
+			<li><a href="https://coshaman.github.io/portfolio/index.html" target="_blank">Portfolio</a></li>
+			<li><a href="https://coshaman.github.io/portfolio/blog.html"><strong>Blog</strong></a></li>
+			<li><a href="https://forms.gle/xmf5UCyExF35YUZr7" target="_blank">Contact</a></li>
 		</ul>
 	</div>
 	<!-- end #menu -->
@@ -51,20 +73,20 @@ Released   : 20130409
 				<div id="content">
 					<div class="post">
 						<h2 class="title"><a href="#">지극히 주관적인 독서 기록장</a></h2>
-						<p class="meta"><span class="date">2021-03-01</span><span class="posted">Posted by <a href="https://coshaman.github.io/portfolio/index.html">집돌이 페렐만</a></span></p>
+						<p class="meta"><span class="date">2021-03-01</span><span class="posted">Posted by <a href="https://coshaman.github.io/portfolio/index.html" target="_blank">집돌이 페렐만</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							<p>10년 간 수많은 책들을 읽으며 1~3주마다 독서 기록을 작성했습니다. 현재 많은 기록이 없어졌지만, 제 기억에 남아있는 책들과 아직 가지고 있는 독서 기록장을 바탕으로 개인적으로 책마다 느낀 점, 평점을 간단하게나마 적고자 합니다.</p>
 							<p>저는 학생이기 때문에 평가는 학생 관점에서 매우 주관적인 것이며, 저의 성향이나 가치관이 반영되어 있기 때문에 여러분의 생각과 다를 수 있습니다. 이에 대해서는 아래 버튼의 설문조사를 통해서 제게 의견을 보내주시면 수정하려고 합니다.</p>
-							<p class="links"><a href="https://forms.gle/xmf5UCyExF35YUZr7" class="button">수정 제안</a></p>
+							<p class="links"><a href="https://forms.gle/xmf5UCyExF35YUZr7" class="button" target="_blank">수정 제안</a></p>
 							<p>또한 한 달마다 아래 버튼으로 제출해주신 메일에 뉴스레터를 보내드리고 있습니다. 역시나 주관적이지만, 그렇기 때문에 가장 현실적인 책 추천을 받고 싶으시다면 뉴스레터를 신청해주세요.</p>
-							<p class="links"><a href="https://forms.gle/xmf5UCyExF35YUZr7" class="button">뉴스레터 구독</a></p>
+							<p class="links"><a href="https://forms.gle/xmf5UCyExF35YUZr7" class="button" target="_blank">뉴스레터 구독</a></p>
 						</div>
 					</div>
 					
 					<div class="post post-alt">
 						<h2 class="title"><a>평점 및 평가 기준</a></h2>
-						<p class="meta"><span class="date">2021-03-03</span><span class="posted">Written by <a href="https://coshaman.github.io/portfolio/index.html">집돌이 페렐만</a></span></p>
+						<p class="meta"><span class="date">2021-03-03</span><span class="posted">Written by <a href="https://coshaman.github.io/portfolio/index.html" target="_blank">집돌이 페렐만</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							<p>
@@ -89,11 +111,11 @@ Released   : 20130409
 					
 					<div class="post post-alt">
 						<h2 class="title"><a>일부 도서 숨김처리</a></h2>
-						<p class="meta"><span class="date">2021-03-04</span><span class="posted">Written by <a href="https://coshaman.github.io/portfolio/index.html">집돌이 페렐만</a></span></p>
+						<p class="meta"><span class="date">2021-03-04</span><span class="posted">Written by <a href="https://coshaman.github.io/portfolio/index.html" target="_blank">집돌이 페렐만</a></span></p>
 						<div style="clear: both;">&nbsp;</div>
 						<div class="entry">
 							<p>
-								라이트노벨과 초등(아동)도서가 전체보기에서 숨김처리되었습니다.
+								라이트노벨과 초등(아동)도서, 네티즌 추천도서가 전체보기에서 숨김처리되었습니다.
 							</p>
 							<p>
 								각각 카테고리 선택 시에만 보실 수 있으며, 책 소개가 비교적 간략할 수 있습니다.
@@ -101,6 +123,22 @@ Released   : 20130409
 						</div>
 					</div>
 					
+					<div class="post post-alt">
+						<h2 class="title"><a>베타 버전(프론트) 완성 및 도서 제보 안내</a></h2>
+						<p class="meta"><span class="date">2021-03-04</span><span class="posted">Written by <a href="https://coshaman.github.io/portfolio/index.html" target="_blank">집돌이 페렐만</a></span></p>
+						<div style="clear: both;">&nbsp;</div>
+						<div class="entry">
+							<p>
+								프론트엔드 작업이 완료되었습니다. 세세한 디자인 작업을 제외하면 앞으로 백엔드 작업을 시작할 계획입니다.
+								그러나 현재 서버 유지 비용이 부족하고, 실력의 한계가 있어서 시간이 걸릴 듯 합니다.
+							</p>
+							<p>
+								따라서 그 때까지는 혹시 추천하시는 책, 수정하고자 하는 내용이 있으시다면 언제나 아래 링크로 연락해주십시오.
+								
+							</p><p class="links"><a href="https://forms.gle/xmf5UCyExF35YUZr7" class="button" target="_blank">수정 제안</a></p>
+						</div>
+					</div>
+					<a id="MOVE_TOP_BTN" href="#">TOP</a>
 					<!--<div class="post post-alt">
 						<h2 class="title"><a>제목</a></h2>
 						<p class="meta"><span class="date">2021--</span><span class="posted">Written by <a href="https://coshaman.github.io/portfolio/index.html">집돌이 페렐만</a></span></p>

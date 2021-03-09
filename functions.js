@@ -13,6 +13,10 @@ function allkk() {
 	for(let i = 0; i<Kore.length; i++){
 		Kore[i].style.display = "none"; 
 	}
+	Kore = document.getElementsByClassName("ne");
+	for(let i = 0; i<Kore.length; i++){
+		Kore[i].style.display = "none"; 
+	}
 	return false;
 }
 
@@ -64,7 +68,7 @@ function chum() {
 	return false;
 }
 
-function fam() {
+function fanm() {
 	Kore = document.getElementsByClassName("post");
 	for(let i = 0; i<Kore.length; i++){
 		Kore[i].style.display = "none"; 
@@ -274,6 +278,18 @@ function elm() {
 		Kore[i].style.display = "none"; 
 	}
 	Kore = document.getElementsByClassName("el");
+	for(let i = 0; i<Kore.length; i++){
+		Kore[i].style.display = "block"; 
+	}
+	return false;
+}
+
+function netm() {
+	Kore = document.getElementsByClassName("post");
+	for(let i = 0; i<Kore.length; i++){
+		Kore[i].style.display = "none"; 
+	}
+	Kore = document.getElementsByClassName("ne");
 	for(let i = 0; i<Kore.length; i++){
 		Kore[i].style.display = "block"; 
 	}
